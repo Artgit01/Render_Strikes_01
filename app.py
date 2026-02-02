@@ -1,15 +1,2 @@
-from flask import Flask
-import time
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "Option Chain Fetcher Running"
-
-@app.route('/ping')
-def ping():
-    return "OK"
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+import os
+app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))
